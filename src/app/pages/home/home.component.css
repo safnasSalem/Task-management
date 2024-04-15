@@ -1,0 +1,47 @@
+.table {
+    width: 94%;
+    margin: 0 auto;
+    background-color: transparent;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+.mat-button span {
+    margin-left: 5px;
+}
+
+.container {
+    text-align: center;
+    /* background-color: #888; */
+}
+
+.table-container {
+    margin: 0 auto;
+}
+
+.empty-message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #888;
+    font-size: larger;
+}
+
+.container {
+    display: flex; /* Use flexbox for layout */
+    margin:  3%;
+}
+
+.container h2 {
+    margin-right: auto; /* Push the h2 element to the right */
+}
+
+button{
+    background-color: #3d844d; /* Primary color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 6px 12px; /* Adjust padding */
+    border-radius: 4px; /* Add border radius */
+    cursor: pointer; /* Change cursor on hover */
+    font-size: 14px; /* Font size */
+}
+

@@ -1,0 +1,38 @@
+<div class="modal">
+  <div class="modal-content">
+    <h2>New Task</h2>
+    <form (ngSubmit)="submitTask()"  class="task-form">
+     
+      <div class="form-group">
+        <label for="taskNumber">Task Number:</label>
+        <input type="text" id="taskNumber" name="taskNumber" [(ngModel)]="taskNumber">
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" [(ngModel)]="description"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="selectedOption">Assigned To:</label>
+        <select id="selectedOption" name="selectedOption" [(ngModel)]="selectedOption">
+          <option *ngFor="let option of options" [value]="option.value">{{ option.label }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="priority">Priority:</label>
+        <select id="priority" name="priority" [(ngModel)]="priority">
+          <option *ngFor="let option of optionss" [value]="option.value">{{ option.label }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="status">Status:</label>
+        <input type="text" id="status" name="status" [(ngModel)]="status">
+      </div>
+     
+    </form>
+   
+    <div class="button-group">
+      <button class="close-button" (click)="closeDialog.emit()">Close</button>
+      <button type="submit"  (click)="submitTask()" class="submit-button">Submit Task</button>
+    </div>
+  </div>
+</div> 

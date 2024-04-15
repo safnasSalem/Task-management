@@ -1,0 +1,39 @@
+<div class="container">
+  <h2>Current Assigned Tasks</h2>
+  <button (click)="openNewTaskDialog()">Add Task<span>&plus;</span></button>
+</div>
+<app-dialogbox
+  *ngIf="showNewTaskDialog"
+  (closeDialog)="showNewTaskDialog = false"
+>
+</app-dialogbox>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Task Number</th>
+      <th scope="col">Priority</th>
+      <th scope="col">Assigned To</th>
+      <th scope="col">Status</th>
+      <th scope="col">Discribtion</th>
+      <th scope="col">Created On</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of tasks">
+      <td>{{ task.taskNumber }}</td>
+      <td>{{ task.priority }}</td>
+      <td>{{ task.assignedTo }}</td>
+      <td>{{ task.status }}</td>
+      <td>{{ task.description }}</td>
+      <td>{{ task.createdOn }}</td>
+      <td>
+        <button (click)="deleteTask(task)">Remove</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="empty-message" *ngIf="tasks.length === 0">
+    <p>No tasks assigned</p>
+</div>
